@@ -22,8 +22,8 @@ function render(leads) {
     }
     ulEl.innerHTML = listItems
 }
-let text = document.getElementById('name').innerHTML;
   const copyText = async () => {
+    let text = document.getElementById('name').innerHTML;
     try {
       await navigator.clipboard.writeText(text);
       console.log('Content copied to clipboard');
