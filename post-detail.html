@@ -1,0 +1,9 @@
+{% block title %}
+Все статьи на сайте
+{% endblock %}
+{% block body %}
+<div class="container mt-5">
+    <h1>{{ article.title }}</h1>
+    <a href="/posts/{{ article.id }}/del">Удалить</a>
+</div>
+{% endblock %}

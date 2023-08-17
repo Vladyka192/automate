@@ -1,0 +1,25 @@
+{%extends 'nav.html' %}
+{% block body %}
+<div class="container mt-5">
+    <h1>Сериалы</h1>
+    {% for el in articles %}
+    <p id="name">{{ el.title }}</p>
+
+    <a href="/posts/{{ el.id }}" id="copy" class="btn btn-success">Детальнее</a>
+    {% endfor %}
+    <button id="copy-btn" onclick="copyText()">Copy all text to your clipboard!</button>
+    
+<script>
+const copyText = async () => {
+let text = document.getElementById('name').innerHTML;
+try {
+    await navigator.clipboard.writeText(text);
+    console.log('Content copied to clipboard');
+} catch (err) {
+    console.error('Failed to copy: ', err);
+}
+  }
+  </script>
+
+</div>
+{% endblock %}
